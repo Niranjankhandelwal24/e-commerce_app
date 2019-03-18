@@ -1,0 +1,25 @@
+<ion-header>
+  <ion-toolbar>
+      <ion-buttons slot="start">
+          <ion-menu-button></ion-menu-button>
+        </ion-buttons>
+    <ion-title>myaccount</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+    <ion-item>
+      <ion-input required type="text"  name="user" [(ngModel)]="username" #user="ngModel" placeholder="FULLNAME"></ion-input> 
+      </ion-item>
+      <ion-item>
+          <ion-input required type="email" name="email"  [(ngModel)]="email_id" #email="ngModel" placeholder="E-MAIL"  [email]="true">EMAIL-ID</ion-input>
+      </ion-item>
+      <ion-item>
+          <ion-input required type="text" name="mobile" [(ngModel)]="mobileno" #mobile="ngModel" placeholder="MOBILE NO." >MOBILE NO.</ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-input required type="text" name="address" [(ngModel)]="useraddress" #address="ngModel" placeholder="ADDRESS" >ADDRESS</ion-input>
+        </ion-item>
+        <ion-button expand="full" (click)="postrequest()">SAVE</ion-button>
+
+</ion-content>

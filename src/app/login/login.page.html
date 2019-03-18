@@ -1,0 +1,23 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>login</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+    <ion-item>
+        <ion-input required type="email" name="email" [(ngModel)]="email_id" #email="ngModel" placeholder="EMAIL ID" [email]="true"></ion-input>
+        <div *ngIf="email.invalid && submitted" class="alert alert-danger">
+        <div *ngIf="email.errors?.required"> email is required</div>
+        <div *ngIf="email.errors?.email_id"> email is invalid</div>
+        </div>
+      </ion-item>
+      <ion-item>
+        <ion-input required type="text" [(ngModel)]="password" name="email"  #pass="ngModel" placeholder="PASSWORD"></ion-input>
+        <!-- <div *ngIf="password.invalid && submitted" class="alert alert-danger"> -->
+        <div *ngIf="pass.errors?.required && submitted">password is required</div>
+        <!-- </div> -->
+      </ion-item>
+      <ion-button expand="full"  (click)="login()">LOGIN</ion-button>
+    
+</ion-content>

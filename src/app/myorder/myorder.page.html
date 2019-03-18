@@ -1,0 +1,28 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>
+      MY ORDERS
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-content padding>
+
+  <ion-card *ngFor="let item of Data.orders">
+    <ion-card-title>{{item.Order_number}}</ion-card-title>
+    <ion-card-title *ngFor="let order of item.items ">
+      <ion-card-subtitle>{{order.name}}</ion-card-subtitle>
+      <ion-card-subtitle>{{order.type}}</ion-card-subtitle>
+        <ion-card-subtitle>{{order.price}}</ion-card-subtitle>
+        <ion-card-subtitle>{{order.quantity}}</ion-card-subtitle>
+      </ion-card-title>
+    <ion-card-title>{{item.DeliveryDate | date:'short'}}</ion-card-title>
+    <ion-card-title>{{item.Totalprice}}</ion-card-title>
+
+  </ion-card>
+
+</ion-content>

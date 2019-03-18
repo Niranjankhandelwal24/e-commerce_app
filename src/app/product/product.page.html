@@ -1,0 +1,26 @@
+<ion-header>
+    <ion-toolbar>
+      <ion-buttons slot="start">
+        <ion-menu-button></ion-menu-button>
+      </ion-buttons>
+      <ion-title>
+        PRODUCTS
+      </ion-title>
+    </ion-toolbar>
+  </ion-header>
+ 
+  
+
+<ion-content padding>
+    <ion-searchbar color="danger" [(ngModel)]="productFilter.name"></ion-searchbar>
+
+    <ion-card *ngFor="let item of Data.products | filterBy: productFilter">
+        <img src ="{{item.image}}">
+        <ion-card-title>{{item.name}}</ion-card-title>
+        <ion-card-content>TYPE:{{item.type}}</ion-card-content>
+        <ion-card-subtitle>Price:{{item.price}}</ion-card-subtitle>
+        <ion-button expand="full" routerLink="/description/{{item._id}}">View Details</ion-button>
+    </ion-card>
+  
+
+</ion-content>

@@ -1,0 +1,34 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>signup</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+  
+  <form name="form1" (ngSubmit)="f.form.valid && signup()" #f="ngForm">
+    <ion-item >
+        <ion-input required type="text"  name="user" [(ngModel)]="username" #user="ngModel" placeholder="FULLNAME"></ion-input> 
+        <div *ngIf="user.invalid && submitted" class="alert alert-danger">
+       <div *ngIf="user.errors?.required">username is required</div>
+      </div>
+       
+
+      </ion-item>
+      <ion-item>
+        <ion-input required type="email" name="email"  [(ngModel)]="email_id" #email="ngModel" placeholder="E-MAIL"  [email]="true"></ion-input>
+        <div *ngIf="email.invalid && submitted" class="alert alert-danger">
+          <div *ngIf="email.errors?.required"> email is required</div>
+          <div *ngIf="email.errors?.email"> email is invalid</div>
+      </div>
+      </ion-item>
+      <ion-item>
+         <ion-input required type="text" name="password" [(ngModel)]="password" #pass="ngModel" placeholder="PASSWORD"></ion-input> 
+          <div *ngIf="pass.errors?.required && submitted">password is required</div>
+        </ion-item>
+      <ion-button expand="full" type="submit" (click)="submitted = true" >LOGIN</ion-button>
+    
+    <p>Already have an account?<ion-button routerLink="/login"> sign-in</ion-button>
+    </p>
+</form>
+</ion-content>

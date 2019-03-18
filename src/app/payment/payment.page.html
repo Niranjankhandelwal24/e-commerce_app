@@ -1,0 +1,49 @@
+<ion-header>
+  <ion-toolbar>
+      <ion-buttons slot="start">
+     
+          <ion-back-button></ion-back-button>
+      
+      </ion-buttons>
+
+    <ion-title>payment</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-item>
+    
+    <ion-input required type="text" placeholder="NAME">NAME</ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-input required type="text" placeholder="EMAIL-ID">EMAIL-ID</ion-input>
+  </ion-item>
+  <ion-item>
+      <ion-input required type="text" placeholder="MOBILE NO.">MOBILE NO.</ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-input required type="text" placeholder="ADDRESS">ADDRESS</ion-input>
+    </ion-item>
+
+    <ion-list>
+      <ion-item>
+        <ion-label>Cash on delivery</ion-label>
+        <!-- <ion-checkbox slot="end" [(ngModel)]="entry.isChecked"></ion-checkbox> -->
+      </ion-item>
+
+      <ion-item>
+          <ion-label>Debit/Credit card</ion-label>
+          <!-- <ion-checkbox slot="end" [(ngModel)]="entry.isChecked"></ion-checkbox> -->
+        </ion-item>
+
+        <ion-item>
+            <ion-label>Net banking</ion-label>
+            <!-- <ion-checkbox slot="end" [(ngModel)]="entry.isChecked"></ion-checkbox> -->
+          </ion-item> 
+          <ion-button (click)="myorder()">PLACE ORDER</ion-button>
+    </ion-list>
+
+    <!-- <ion-checkbox color="primary"></ion-checkbox>
+    <ion-checkbox color="primary">Debit/Credit card</ion-checkbox>
+    <ion-checkbox color="primary">Net banking</ion-checkbox> -->
+</ion-content>

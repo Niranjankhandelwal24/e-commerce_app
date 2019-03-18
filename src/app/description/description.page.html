@@ -1,0 +1,31 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+     
+        <ion-back-button></ion-back-button>
+    
+    </ion-buttons>
+    <ion-buttons slot="end">
+    <ion-button fill="clear" routerLink="/cart" >
+      <ion-icon name="cart"></ion-icon>
+      <ion-icon size="small"></ion-icon>
+    </ion-button>
+    </ion-buttons>
+    <ion-title>
+      Product Description
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content padding>
+{{Data}}
+  <ion-card >
+    <img src="{{item.image}}">
+    <ion-card-title>{{item.name}}</ion-card-title>
+    <ion-card-content>TYPE:{{item.type}}</ion-card-content>
+    <ion-card-subtitle>Price:${{item.price}}</ion-card-subtitle>
+    <ion-card-content>DESCRIPTION:{{item.description}}</ion-card-content>
+    <ion-button expand="full" (click)="addProduct(item)">ADD TO CART</ion-button>
+    <!-- <ion-button expand="full" routerLink="/cart">ADD TO CART</ion-button> -->
+     
+  </ion-card>
+</ion-content>

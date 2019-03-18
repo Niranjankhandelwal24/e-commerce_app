@@ -1,0 +1,55 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button ></ion-back-button>
+</ion-buttons>
+    <ion-title>Shopping cart</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+    <ion-list>   
+        <ion-grid *ngFor="let item of Data">
+            <ion-row>
+                <ion-col>        
+            <ion-item>
+              <ion-label>{{item.name}}</ion-label>
+            </ion-item>
+            </ion-col>
+            <ion-col>        
+                <ion-item>
+                  <ion-label>${{item.price * item.quantity}}</ion-label>
+                </ion-item>
+                </ion-col>
+                <ion-col>        
+                    <ion-item>
+                            <div>
+                                    <ion-icon name="add" (click)="Addqty(item)"></ion-icon>
+                                    {{item.quantity}}
+                                    <ion-icon name="remove" (click)="Minusqty(item)"></ion-icon>
+                         </div>
+                      <!-- <ion-label>{{item.quantity}}</ion-label> -->
+                    </ion-item>
+                    </ion-col>
+            <ion-button (click)="DeleteProduct(item)">REMOVE ITEM</ion-button>  
+            </ion-row>
+        </ion-grid>
+        <ion-button *ngIf="Data.length" routerLink="/payment">BUY NOW</ion-button> 
+    </ion-list>
+    <!-- <ion-title (click)="grandTotal()">GRAND TOTAL:</ion-title> -->
+    <ion-item>
+            <ion-label  *ngIf="Data.length">Grand Total : {{total}}</ion-label>
+          </ion-item>
+    <ion-list>
+        <ion-grid *ngIf="!Data.length">
+          <ion-row>
+              <ion-col>        
+          <ion-item>
+            <ion-label> YOUR CART IS EMPTY!!     
+              </ion-label>
+          </ion-item>
+          </ion-col>
+          </ion-row>       
+      </ion-grid>
+      </ion-list>          
+</ion-content>
